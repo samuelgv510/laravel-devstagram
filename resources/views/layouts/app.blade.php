@@ -6,9 +6,23 @@
         <title>DevStagram - @yield('titulo')</title>
         @vite('resources/css/app.css')
     </head>
-    <body>
-        <h1 class="text-4xl font-extrabold">@yield('titulo')</h1>       
-        @yield('contenido')
+    <body class="bg-gray-100">
+        <header class="p-5 border-b bg-white shadow">
+            <div class="container mx-auto flex justify-between items-center">
+                <h1 class="text-3xl font-black">DevStagram</h1>
+                <nav class="flex gap-2 items-center">
+                    <a class="font-bold uppercase text-gray-600 text-sm" href="#">Login</a>
+                    <a class="font-bold uppercase text-gray-600 text-sm" href="#">Crear Cuenta</a>
+                </nav>
+            </div>            
+        </header>   
+        <main class="container mx-auto mt-10">
+            <h2 class="font-black text-center text-3xl mb-10">@yield('titulo')</h2>
+            @yield('contenido')
+        </main> 
+        <footer class="text-center p-5 text-gray-500 font-bold uppercase">
+            DevStagram - Todos los derechos reservados {{now()->year}}
+        </footer>
         <hr>
         <div class="ml-4 text-center text-sm text-gray-500 dark:text-gray-400 sm:text-right sm:ml-0">
             Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
