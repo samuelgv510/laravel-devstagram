@@ -27,7 +27,7 @@
                     <label for="username" class="mb-2 block uppercase text-gray-500 font-bold">
                         Username
                     </label>
-                    <input id="username" name="username" type="text" placeholder="Tu Nombre de Usuario" class="border p-3 w-full rounded-lg">     
+                    <input id="username" name="username" type="text" placeholder="Tu Nombre de Usuario" class="border p-3 w-full rounded-lg @error('username') border-red-500 @enderror" value="{{old('username')}}">     
                     @error('username')
                         <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">
                             {{$message}}
@@ -38,7 +38,7 @@
                     <label for="email" class="mb-2 block uppercase text-gray-500 font-bold">
                         Email
                     </label>
-                    <input id="email" name="email" type="email" placeholder="Tu Email de Registro" class="border p-3 w-full rounded-lg">
+                    <input id="email" name="email" type="email" placeholder="Tu Email de Registro" class="border p-3 w-full rounded-lg @error('email') border-red-500 @enderror" value="{{old('email')}}">
                     @error('email')
                         <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">
                             {{$message}}
@@ -49,7 +49,7 @@
                     <label for="password" class="mb-2 block uppercase text-gray-500 font-bold">
                         Password
                     </label>
-                    <input id="password" name="password" type="password" placeholder="Password de Registro" class="border p-3 w-full rounded-lg">
+                    <input id="password" name="password" type="password" placeholder="Password de Registro" class="border p-3 w-full rounded-lg @error('password') border-red-500 @enderror">
                     @error('password')
                         <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">
                             {{$message}}
